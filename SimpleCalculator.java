@@ -1,1 +1,170 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class SimpleCalculator{
+    public static void main(String[] args){
 
+        Scanner sc = new Scanner(System.in);
+
+
+        double result = 0;
+        String ContinueCalculating = "YES";
+
+        char operator;
+        do{
+        System.out.println("*****************");
+        System.out.println("OPERATION AVAILABLE IN THE CALCULATOR");
+        System.out.println("*****************");
+        System.out.println("Addition: + ");
+        System.out.println("Subtraction: - ");
+        System.out.println("Multiplication: * ");
+        System.out.println("Division: / ");
+        System.out.println("Power: ^ ");
+        System.out.println("Remainder: % ");
+            System.out.println("Trio Value (sinθ,cosθ,tanθ): θ ");
+        System.out.println("Factorial: ! ");
+        System.out.println("SquareRoot: √ ");
+        System.out.println("logarithm: # ");
+        System.out.println("Absoulute value: @ ");
+
+        System.out.println("ENTER THE OPERATOR: ");
+        operator = sc.next().charAt(0);
+
+        switch (operator) {
+            case '+':
+                System.out.println("Enter the Number1: ");
+                int num1 = sc.nextInt();
+                System.out.println("Enter the Number2: ");
+                int num2 = sc.nextInt();
+                result = num1 + num2;
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '-':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                System.out.println("Enter the Number2: ");
+                num2 = sc.nextInt();
+                result = num1 - num2;
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '*':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                System.out.println("Enter the Number2: ");
+                num2 = sc.nextInt();
+                result = num1 * num2;
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '/':
+                System.out.println("Enter the Number1: ");
+               num1 = sc.nextInt();
+                System.out.println("Enter the Number2: ");
+                num2 = sc.nextInt();
+                if(num2 == 0){
+                    System.out.println("Invalid");
+                }else {
+                    result = num1 / num2;
+                    System.out.println("**********************");
+                    System.out.println("The Answer is: " + result);
+                    System.out.println("**********************");
+                }
+                break;
+            case '%':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                System.out.println("Enter the Number2: ");
+                num2 = sc.nextInt();
+                result = num1 % num2;
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '^':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                System.out.println("Enter the Number2: ");
+                num2 = sc.nextInt();
+                result = Math.pow(num1, num2);
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+                case 'θ':
+                System.out.println("Enter angle in degrees: ");
+                double degree = sc.nextDouble();
+                result = Math.sin(Math.toRadians(degree));
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                result = Math.cos(Math.toRadians(degree));
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                result = Math.tan(Math.toRadians(degree));
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '!':
+                System.out.println("Enter the number: ");
+                int num = sc.nextInt();
+
+                long fact = 1;
+
+                if (num < 0) {
+                    System.out.println("Factorial not defined for negative numbers");
+                } else {
+                    for (int i = 1; i <= num; i++) {
+                        fact = fact * i;
+                    }
+                    System.out.println("**********************");
+                    System.out.println("The Answer is: " + fact);
+                    System.out.println("**********************");
+                }
+                break;
+
+            case '√':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                result = Math.sqrt(num1);
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '#':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                result = Math.log(num1);
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+            case '@':
+                System.out.println("Enter the Number1: ");
+                num1 = sc.nextInt();
+                result = Math.abs(num1);
+                System.out.println("**********************");
+                System.out.println("The Answer is: " + result);
+                System.out.println("**********************");
+                break;
+
+            default:
+                System.out.println("Invalid Operator");
+                break;
+        }
+        System.out.println("**********************");
+        System.out.println("YOU WANT TO CONTINUE CALCULATING(YES/NO): ");
+            System.out.println("**********************");
+            ContinueCalculating = sc.next().toUpperCase();
+        }while(ContinueCalculating.equals("YES"));
+        if(ContinueCalculating.equals("NO")){
+            System.out.println("THANKS FOR USING");
+        }
+
+    }
+}

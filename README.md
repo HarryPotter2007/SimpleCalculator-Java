@@ -53,3 +53,5 @@ A **Console Based Calculator** built using **Java** that supports basic and adva
 ### 1️⃣ Compile the program
 ```bash
 javac SimpleCalculator.java
+
+java SimpleCalculator
